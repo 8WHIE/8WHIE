@@ -1,0 +1,5 @@
+# 8WHIE robots.txt - https://8whie.page.gd
+User-agent: *
+Allow: /
+
+Sitemap: https://8whie.page.gd/sitemap.xml

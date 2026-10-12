@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #080B0F;
+    --bg-secondary: #101820;
+    --bg-card: #111C20;
+    --neon-green: #00FF88;
+    --terminal-green: #00FF41;
+    --text-primary: #E6FFF2;
+    --text-secondary: #8CA99B;
+    --border-color: #1B3A2E;
+    --warning-accent: #FFB020;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  code, pre, .font-terminal {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+/* Custom Cyber Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080B0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1B3A2E;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00FF88;
+}
+
+/* Subtle scanlines effect (low CPU) */
+.scanline-overlay {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.02),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.02)
+  );
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Terminal blink cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+/* Glow effects */
+.cyber-glow {
+  box-shadow: 0 0 20px -3px rgba(0, 255, 136, 0.2);
+}
+
+.cyber-glow-sm {
+  box-shadow: 0 0 10px -2px rgba(0, 255, 136, 0.15);
+}
+
+.cyber-border {
+  border: 1px solid #1B3A2E;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cyber-border:hover {
+  border-color: rgba(0, 255, 136, 0.4);
+}
